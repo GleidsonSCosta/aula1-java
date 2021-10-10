@@ -1,22 +1,26 @@
 package Application;
 
-import java.util.Scanner;
+import java.util.Date;
+
+import classes.Pedido;
+import classes.enums.StatusPedido;
 
 public class Programa {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Quantas horas?");
-		int horas = sc.nextInt();
-		if (horas < 12) {
-			System.out.println("Bom dia!");
-		} else if (horas >= 12 && horas < 18) {
-			System.out.println("Boa tarde!");
-		} else {
-			System.out.println("Boa noite!");
-		}
-
-		sc.close();
-
+		//Declarar um objeto Pedido
+		Pedido pedido = new Pedido(1000, new Date(), StatusPedido.AGURADANDO_PAGAMENTO);
+		
+		
+		//na impressão o enum é retornado como string
+		System.out.println(pedido);
+		
+		//como  transformar uma String em "enum"
+		StatusPedido pedido1 = StatusPedido.ENTREGUE;
+		
+		StatusPedido pedido2 = StatusPedido.valueOf("ENTREGUE");
+		
+		System.out.println(pedido1);
+		System.out.println(pedido2);
 	}
 }
