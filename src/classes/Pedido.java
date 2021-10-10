@@ -14,7 +14,6 @@ public class Pedido {
 	}
 
 	public Pedido(Integer id, Date momento, StatusPedido status) {
-		super();
 		this.id = id;
 		this.momento = momento;
 		this.status = status;
